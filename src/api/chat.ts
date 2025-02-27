@@ -27,6 +27,7 @@ export default async function sendChat({ chatId, message }: Props) {
       Authorization: `Bearer ${response.accessToken}`,
     },
     body: JSON.stringify({
+      userEmailAddress: account.username,
       chatId,
       message: message.text,
     }),

@@ -1,3 +1,4 @@
+import { env } from "../env";
 import { Message } from "../types";
 
 type Props = {
@@ -6,8 +7,11 @@ type Props = {
 };
 
 export default async function sendChat({ chatId, message }: Props) {
-  const res = await fetch("http://localhost:7071/api/chat", {
+  const res = await fetch(env.api.chat, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       chatId,
       message: message.text,

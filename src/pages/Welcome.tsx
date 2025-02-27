@@ -26,7 +26,6 @@ function Welcome() {
 
   return (
     <>
-      <h1>Welcome! Start chatting.</h1>
       <Chat chatId={id} username={'Derek'} />
     </>
   );
